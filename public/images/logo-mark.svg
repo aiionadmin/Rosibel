@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Placeholder marca Rosibel Pedras">
+  <rect width="200" height="200" fill="#0E0E0E"/>
+  <rect x="24" y="24" width="152" height="152" fill="none" stroke="#B08D57" stroke-width="1.5"/>
+  <text x="100" y="105" text-anchor="middle" fill="#F5F2EC" font-family="Georgia, serif" font-size="22">RP</text>
+  <text x="100" y="155" text-anchor="middle" fill="#8A857C" font-family="sans-serif" font-size="10">TODO: logo</text>
+</svg>
