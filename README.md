@@ -10,9 +10,10 @@ python3 -m http.server 3000 --bind 0.0.0.0
 
 Abra http://localhost:3000
 
-## Arquivo
+## Arquivos
 
 - `index.html` — site completo (layout, estilos e scripts embutidos)
+- `links/` — linktree próprio (mesmos contatos do linklist.bio, visual do site)
 
 ## Deploy
 
