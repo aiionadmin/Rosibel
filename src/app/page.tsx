@@ -1,61 +1,51 @@
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteHero } from "@/components/site/SiteHero";
+import { SiteNavbar } from "@/components/site/SiteNavbar";
+import { MaterialsPreview } from "@/components/site/MaterialsPreview";
 import { siteConfig } from "@/config/site";
 
 /**
- * Home mínima (Fase 1).
- * Texto real no HTML antes de qualquer animação — SEO / reduced-motion safe.
- * Cenas cinematográficas entram nas fases seguintes (siteConfig.scenes).
+ * Preview Home — navbar + hero + materials + footer.
+ * Cenas imersivas GSAP (Fase Home) vêm depois desta prévia visual.
  */
 export default function HomePage() {
   return (
-    <main className="relative mx-auto flex min-h-dvh max-w-5xl flex-col justify-center px-6 py-24">
-      <p className="mb-4 text-sm tracking-[0.2em] text-rp-stone uppercase">
-        Contagem / MG · desde {siteConfig.foundedYear}
-      </p>
-
-      <h1 className="font-heading text-5xl leading-tight text-rp-offwhite sm:text-7xl">
-        {siteConfig.name}
-      </h1>
-
-      <p className="mt-6 max-w-xl text-lg leading-relaxed text-rp-stone">
-        {siteConfig.description}
-      </p>
-
-      <dl className="mt-12 grid gap-4 text-sm text-rp-stone sm:grid-cols-2">
-        <div>
-          <dt className="text-rp-offwhite/70">Endereço</dt>
-          <dd className="mt-1">{siteConfig.address.full}</dd>
-        </div>
-        <div>
-          <dt className="text-rp-offwhite/70">Contato</dt>
-          <dd className="mt-1">
-            <a
-              href={`tel:${siteConfig.phone.tel}`}
-              className="transition-colors hover:text-rp-bronze"
-            >
-              {siteConfig.phone.display}
-            </a>
-            <br />
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="transition-colors hover:text-rp-bronze"
-            >
-              {siteConfig.email}
-            </a>
-          </dd>
-        </div>
-        <div>
-          <dt className="text-rp-offwhite/70">CNPJ</dt>
-          <dd className="mt-1">{siteConfig.cnpj}</dd>
-        </div>
-        <div>
-          <dt className="text-rp-offwhite/70">Razão social</dt>
-          <dd className="mt-1">{siteConfig.legalName}</dd>
-        </div>
-      </dl>
-
-      <p className="mt-16 text-xs tracking-wide text-rp-stone/70 uppercase">
-        Fundação — cenas e conteúdo em construção
-      </p>
-    </main>
+    <>
+      <SiteNavbar />
+      <main>
+        <SiteHero />
+        <MaterialsPreview />
+        <section
+          id="sobre"
+          className="border-t border-rp-stone/15 px-6 py-24"
+        >
+          <div className="mx-auto max-w-5xl">
+            <p className="font-sans text-xs tracking-[0.22em] text-rp-stone uppercase">
+              Sobre
+            </p>
+            <h2 className="font-heading mt-3 max-w-2xl text-4xl text-rp-offwhite sm:text-5xl">
+              Pedra natural em Contagem desde {siteConfig.foundedYear}
+            </h2>
+            <p className="mt-6 max-w-2xl font-sans leading-relaxed text-rp-stone">
+              Atendemos{" "}
+              {siteConfig.audience.join(", ").replace(/, ([^,]*)$/, " e $1")}.
+              Texto institucional completo e cenas cinematográficas entram na
+              próxima etapa.
+            </p>
+          </div>
+        </section>
+        <section
+          id="projetos"
+          className="border-t border-rp-stone/15 px-6 py-16"
+        >
+          <div className="mx-auto max-w-5xl">
+            <p className="font-sans text-sm text-rp-stone/70">
+              Projetos — TODO (sem conteúdo inventado)
+            </p>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
+    </>
   );
 }

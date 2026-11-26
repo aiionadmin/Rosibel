@@ -79,13 +79,14 @@ export const siteConfig = {
    * Alternar aqui para ligar/desligar blocos sem apagar código.
    */
   scenes: {
-    hero: false, // TODO: ativar após aprovação da Fase 2/3
-    marquee: false,
-    products: false,
+    /** Preview shell on; immersive GSAP scenes still TODO */
+    hero: true,
+    marquee: false, // pending 21st install (quota/API key)
+    products: true, // lightweight preview strip
     projects: false,
-    gallery: false,
-    about: false,
-    contact: false,
+    gallery: false, // pending 21st install
+    about: true,
+    contact: true,
   },
 
   /** Webhook do formulário de contato (n8n / Make / etc.) */
