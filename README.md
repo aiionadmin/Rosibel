@@ -14,6 +14,7 @@ Abra http://localhost:3000
 
 - `index.html` — site completo (layout, estilos e scripts embutidos)
 - `links/` — linktree próprio (mesmos contatos do linklist.bio, visual do site)
+- `auth/` — shell do ERP (login + painel); autenticação local de demonstração
 
 ## Deploy
 
