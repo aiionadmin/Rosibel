@@ -255,14 +255,6 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .steps .n{font-family:var(--display);font-weight:900;font-size:3rem;line-height:1;color:var(--oxide)}
 .steps b{display:block;font-weight:600;margin:6px 0 4px;font-size:1.1rem}
 
-/* club oro */
-.club{padding:var(--sec) var(--gutter);text-align:center;border-block:1px solid var(--slate-600);position:relative;overflow:hidden}
-.club h2{font-size:clamp(4rem,19vw,19rem);line-height:.8;background:linear-gradient(100deg,#7d6a45 0%,#b19c75 30%,#f6eedd 48%,#bcb19c 62%,#7d6a45 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:oro 7s linear infinite}
-@keyframes oro{to{background-position:-220% 0}}
-.club p{max-width:48ch;margin:26px auto 0}
-.club .who{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
-.club .who span{border:1px solid var(--quartz);color:var(--quartz);border-radius:999px;padding:6px 16px}
-
 /* cuidados e dúvidas */
 .care{padding:var(--sec) var(--gutter)}
 .care-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:1px;background:var(--slate-600);border:1px solid var(--slate-600);margin-top:clamp(36px,6vh,70px)}
@@ -328,7 +320,7 @@ tr.today td{color:var(--quartz)}
 .menu-open .cta{transform:translateY(160%)}
 @media (max-width:760px){.cta{display:flex}.foot{padding-bottom:84px}.visit-grid{gap:34px}.fin-stage{aspect-ratio:1}.steps li{padding-right:0}.insta .tiles{gap:8px}}
 @media (max-width:560px){.top-r a{display:none}.hero h1 .ln2{-webkit-text-stroke-width:1.2px}}
-@media (prefers-reduced-motion:reduce){.cue i,.club h2{animation:none}.menu{transition:none}}
+@media (prefers-reduced-motion:reduce){.cue i{animation:none}.menu{transition:none}}
 </style>
 </head>
 <body>
@@ -351,9 +343,8 @@ tr.today td{color:var(--quartz)}
     <li><a href="#acabamentos"><span>03</span>Acabamentos</a></li>
     <li><a href="#na-obra"><span>04</span>Na obra</a></li>
     <li><a href="#sob-medida"><span>05</span>Sob medida</a></li>
-    <li><a href="#club-oro"><span>06</span>Club Oro</a></li>
-    <li><a href="#cuidados"><span>07</span>Cuidados</a></li>
-    <li><a href="#visite"><span>08</span>Visite</a></li>
+    <li><a href="#cuidados"><span>06</span>Cuidados</a></li>
+    <li><a href="#visite"><span>07</span>Visite</a></li>
   </ol>
   <div class="menu-foot mono"><span>(31) 3385-2298</span><span>rosibelpedras@hotmail.com</span><span>Av. Cel. Benjamim Guimarães, 500 · Contagem</span></div>
 </nav>
@@ -610,13 +601,6 @@ tr.today td{color:var(--quartz)}
   </div>
 </section>
 
-<section class="club" id="club-oro">
-  <p class="mono eyebrow">Para quem especifica</p>
-  <h2>Club Oro</h2>
-  <p>O clube da Rosibel para profissionais que desenham os ambientes onde a pedra vai morar. Fale com a loja para saber como participar.</p>
-  <div class="who mono"><span>Arquitetos</span><span>Designers de interiores</span></div>
-</section>
-
 <section class="care" id="cuidados">
   <p class="mono eyebrow">Cuidados</p>
   <h2 class="h-big">Pedra dura muito. Bem cuidada, dura mais.</h2>
@@ -639,7 +623,6 @@ tr.today td{color:var(--quartz)}
     <details><summary>Qual o tamanho das chapas?</summary><p>O catálogo indica chapas de 320 × 160 cm para mármores e de 285 × 185,2 cm para quartzos, com 1 a 2 cm de espessura. Outras pedras variam; confirme na loja.</p></details>
     <details><summary>Qual é o prazo?</summary><p>O catálogo informa 15 dias de transporte para chapas de mármore e quartzo. O prazo da sua peça vem no orçamento.</p></details>
     <details><summary>Posso ver a pedra antes de fechar?</summary><p>Deve. Pedra natural não se repete, e a chapa que você vê é a que vira a sua peça. A loja fica na Av. Coronel Benjamim Guimarães, 500, em Contagem.</p></details>
-    <details><summary>Sou arquiteto ou designer. Há algum programa?</summary><p>Há o Club Oro, voltado a arquitetos e designers de interiores. As condições são informadas pela loja.</p></details>
   </div>
 </section>
 
@@ -688,7 +671,7 @@ tr.today td{color:var(--quartz)}
     <div class="foot-cols">
       <div><h3>Rosibel Pedras Ltda.</h3><p>Marmoraria em Contagem, MG, desde 1997.</p></div>
       <div><h3>Catálogo</h3><ul><li><a href="#catalogo">Granitos e mármores</a></li><li><a href="#catalogo">Quartzitos e quartzos</a></li><li><a href="#catalogo">Pedras decorativas</a></li><li><a href="#acabamentos">Acabamentos</a></li></ul></div>
-      <div><h3>Serviços</h3><ul><li><a href="#sob-medida">Pias e lavatórios sob medida</a></li><li><a href="#na-obra">Onde usar cada pedra</a></li><li><a href="#club-oro">Club Oro</a></li><li><a href="#cuidados">Cuidados</a></li></ul></div>
+      <div><h3>Serviços</h3><ul><li><a href="#sob-medida">Pias e lavatórios sob medida</a></li><li><a href="#na-obra">Onde usar cada pedra</a></li><li><a href="#cuidados">Cuidados</a></li></ul></div>
       <div><h3>Redes</h3><ul><li><a href="https://www.instagram.com/rosibelpedras/" target="_blank" rel="noopener">Instagram ↗</a></li><li><a href="https://www.facebook.com/Rosibelpedrasemarmores/" target="_blank" rel="noopener">Facebook ↗</a></li><li><a href="https://www.rosibelpedras.com.br/" target="_blank" rel="noopener">rosibelpedras.com.br ↗</a></li></ul><p style="margin-top:12px">Texturas geradas por código, sem fotografias.</p></div>
     </div>
     <div class="wordmark" aria-hidden="true" data-split>Rosibel</div>
@@ -1046,10 +1029,6 @@ function build(){
   gsap.from("#cfg > *",{y:26,autoAlpha:0,duration:.6,stagger:.06,ease:"power3.out",scrollTrigger:{trigger:"#cfg",start:"top 82%"}});
   gsap.fromTo(".steps-bar",{scaleX:0},{scaleX:1,ease:"none",scrollTrigger:{trigger:".steps",start:"top 85%",end:"top 35%",scrub:.5}});
   gsap.from(".steps li:not(.steps-bar)",{y:30,autoAlpha:0,stagger:.12,duration:.7,ease:"power3.out",scrollTrigger:{trigger:".steps",start:"top 85%"}});
-
-  /* club oro */
-  gsap.fromTo(".club h2",{scale:.6,letterSpacing:"-.06em"},{scale:1,letterSpacing:"0em",ease:"none",scrollTrigger:{trigger:".club",start:"top 90%",end:"center 55%",scrub:.6}});
-  gsap.from(".club .who span",{y:20,autoAlpha:0,stagger:.1,duration:.6,scrollTrigger:{trigger:".club .who",start:"top 90%"}});
 
   /* cuidados, dúvidas, instagram */
   gsap.from(".care-card",{y:50,autoAlpha:0,duration:.7,stagger:.08,ease:"power3.out",scrollTrigger:{trigger:".care-grid",start:"top 82%"}});
