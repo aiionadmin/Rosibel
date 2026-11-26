@@ -39,27 +39,28 @@ a{color:inherit}
 .shell{position:relative;z-index:1;width:min(420px,92vw);padding:clamp(28px,5vh,44px) 0}
 .brand{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:2.4rem;letter-spacing:.02em;line-height:.9}
 .eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--quartz);margin-top:10px}
-.lead{color:var(--muted);margin:18px 0 28px;max-width:34ch;font-size:.98rem}
-form{display:grid;gap:14px}
+.lead{color:var(--muted);margin:18px 0 28px;max-width:36ch;font-size:.98rem}
+.fields{display:grid;gap:14px}
 label{display:grid;gap:6px;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 input{
   width:100%;border:1px solid var(--slate-600);background:rgba(30,38,69,.65);
   color:var(--bone);border-radius:0;padding:14px 14px;font:inherit;font-size:1rem;
 }
-input:focus{border-color:var(--quartz);outline:none}
+input:disabled{opacity:.55;cursor:not-allowed}
 .row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:2px}
-.check{display:flex;align-items:center;gap:8px;font-family:var(--body);font-size:.9rem;letter-spacing:0;text-transform:none;color:var(--muted);cursor:pointer}
+.check{display:flex;align-items:center;gap:8px;font-family:var(--body);font-size:.9rem;letter-spacing:0;text-transform:none;color:var(--muted)}
 .check input{width:16px;height:16px;accent-color:var(--quartz)}
-button[type=submit]{
-  margin-top:8px;border:0;border-radius:999px;padding:14px 20px;
-  background:var(--quartz);color:var(--slate-900);font-weight:600;cursor:pointer;
-  transition:background .2s,transform .2s;
+.actions{display:grid;gap:10px;margin-top:18px}
+.btn{
+  display:inline-flex;justify-content:center;align-items:center;
+  border:0;border-radius:999px;padding:14px 20px;text-decoration:none;
+  font-weight:600;cursor:pointer;transition:background .2s,color .2s,border-color .2s;
 }
-button[type=submit]:hover{background:var(--bone)}
-.err{display:none;color:#e8a0a0;font-size:.9rem;margin-top:4px}
-.err.on{display:block}
-.note{margin-top:22px;font-size:.82rem;color:var(--muted)}
-.note code{font-family:var(--mono);font-size:.75rem;color:var(--quartz)}
+.btn-primary{background:var(--quartz);color:var(--slate-900)}
+.btn-primary:hover{background:var(--bone)}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--slate-600)}
+.btn-ghost:hover{color:var(--bone);border-color:var(--quartz)}
+.note{margin-top:22px;font-size:.82rem;color:var(--muted);line-height:1.45}
 .back{display:inline-block;margin-top:28px;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none}
 .back:hover{color:var(--quartz)}
 </style>
@@ -68,50 +69,28 @@ button[type=submit]:hover{background:var(--bone)}
 <div class="grain" aria-hidden="true"></div>
 <main class="shell">
   <p class="brand">Rosibel</p>
-  <p class="eyebrow">ERP · acesso interno</p>
-  <p class="lead">Entre para gerenciar orçamentos, pedidos, estoque e clientes.</p>
+  <p class="eyebrow">ERP · prévia de interface</p>
+  <p class="lead">Mockup do futuro acesso interno. Sem autenticação real neste site público.</p>
 
-  <form id="login" novalidate>
+  <div class="fields" aria-hidden="true">
     <label>E-mail
-      <input id="email" name="email" type="email" autocomplete="username" required placeholder="seu@email.com" value="admin@rosibelpedras.com.br">
+      <input type="email" disabled placeholder="seu@email.com" tabindex="-1">
     </label>
     <label>Senha
-      <input id="pass" name="password" type="password" autocomplete="current-password" required placeholder="••••••••" value="rosibel">
+      <input type="password" disabled placeholder="••••••••" tabindex="-1">
     </label>
     <div class="row">
-      <label class="check"><input type="checkbox" id="remember" checked> Manter conectado</label>
+      <label class="check"><input type="checkbox" disabled tabindex="-1"> Manter conectado</label>
     </div>
-    <p class="err" id="err" role="alert">E-mail ou senha inválidos.</p>
-    <button type="submit">Entrar no painel</button>
-  </form>
+  </div>
 
-  <p class="note">Prévia de interface — autenticação local de demonstração.<br>Use <code>admin@rosibelpedras.com.br</code> / <code>rosibel</code></p>
-  <a class="back" href="/">← Voltar ao site</a>
+  <div class="actions">
+    <a class="btn btn-primary" href="/auth/painel.html">Ver prévia do painel</a>
+    <a class="btn btn-ghost" href="/">Voltar ao site</a>
+  </div>
+
+  <p class="note">Login real (servidor + sessão) entra numa etapa seguinte. Esta página é só layout — campos desabilitados, sem senha e sem sessão no navegador.</p>
+  <a class="back" href="/">← Site institucional</a>
 </main>
-<script>
-(function(){
-  var KEY="rosibel_erp_session";
-  if(sessionStorage.getItem(KEY) || localStorage.getItem(KEY)){
-    location.replace("/auth/painel.html");
-    return;
-  }
-  var form=document.getElementById("login");
-  var err=document.getElementById("err");
-  form.addEventListener("submit",function(e){
-    e.preventDefault();
-    err.classList.remove("on");
-    var email=(document.getElementById("email").value||"").trim().toLowerCase();
-    var pass=document.getElementById("pass").value||"";
-    // Demo only — replace with real auth backend later
-    if(email==="admin@rosibelpedras.com.br" && pass==="rosibel"){
-      var store=document.getElementById("remember").checked?localStorage:sessionStorage;
-      store.setItem(KEY, JSON.stringify({email:email, name:"Administrador", at:Date.now()}));
-      location.href="/auth/painel.html";
-    }else{
-      err.classList.add("on");
-    }
-  });
-})();
-</script>
 </body>
 </html>

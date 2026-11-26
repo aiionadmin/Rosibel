@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Painel · ERP Rosibel</title>
+<title>Painel · prévia ERP Rosibel</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
@@ -126,17 +126,9 @@ td.status .draft{border-color:rgba(166,168,180,.35);color:var(--muted)}
 </style>
 </head>
 <body>
-<script>
-(function(){
-  var KEY="rosibel_erp_session";
-  var raw=sessionStorage.getItem(KEY)||localStorage.getItem(KEY);
-  if(!raw){location.replace("/auth/");}
-  try{window.__erpUser=JSON.parse(raw)}catch(e){location.replace("/auth/")}
-})();
-</script>
 <div class="app">
   <aside class="side" aria-label="Navegação do ERP">
-    <div class="logo">Rosibel<span>ERP interno</span></div>
+    <div class="logo">Rosibel<span>ERP · prévia de UI</span></div>
     <nav class="nav">
       <a class="active" href="/auth/painel.html"><span class="dot" aria-hidden="true"></span>Visão geral</a>
       <a href="#orcamentos"><span class="dot" aria-hidden="true"></span>Orçamentos</a>
@@ -147,8 +139,8 @@ td.status .draft{border-color:rgba(166,168,180,.35);color:var(--muted)}
       <a href="#financeiro"><span class="dot" aria-hidden="true"></span>Financeiro</a>
     </nav>
     <div class="side-foot">
-      <div class="user"><b id="uname">—</b><span id="uemail">—</span></div>
-      <button class="logout" type="button" id="logout">Sair</button>
+      <div class="user"><b>Prévia pública</b><span>Sem login · dados fictícios</span></div>
+      <a class="logout" href="/auth/">Voltar ao mockup de login</a>
     </div>
   </aside>
 
@@ -158,7 +150,7 @@ td.status .draft{border-color:rgba(166,168,180,.35);color:var(--muted)}
         <h1>Visão geral</h1>
         <p class="meta" id="today">Contagem · MG</p>
       </div>
-      <div class="badge"><i></i> Prévia · dados de demonstração</div>
+      <div class="badge"><i></i> Prévia pública · sem autenticação</div>
     </header>
 
     <div class="content">
@@ -206,23 +198,15 @@ td.status .draft{border-color:rgba(166,168,180,.35);color:var(--muted)}
         <a class="mod" href="/"><div class="n">06</div><h3>Site</h3><p>Voltar ao site institucional Rosibel Pedras.</p></a>
       </section>
 
-      <p class="hint">Interface-shell do ERP — sem backend ainda. Dados acima são demonstrativos e não representam pedidos reais.</p>
+      <p class="hint">Mockup estático do futuro ERP — página pública, sem sessão e sem dados reais. Login de produção virá com backend.</p>
     </div>
   </div>
 </div>
 <script>
 (function(){
-  var u=window.__erpUser||{};
-  document.getElementById("uname").textContent=u.name||"Usuário";
-  document.getElementById("uemail").textContent=u.email||"";
   var d=new Date();
   var dias=["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
   document.getElementById("today").textContent=dias[d.getDay()]+" · Contagem / MG";
-  document.getElementById("logout").addEventListener("click",function(){
-    sessionStorage.removeItem("rosibel_erp_session");
-    localStorage.removeItem("rosibel_erp_session");
-    location.href="/auth/";
-  });
 })();
 </script>
 </body>
