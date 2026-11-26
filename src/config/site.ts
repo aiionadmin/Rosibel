@@ -46,20 +46,33 @@ export const siteConfig = {
   },
 
   social: {
-    /** TODO: URL Instagram confirmada no brief */
-    instagram: "", // TODO
-    /** TODO: URL Facebook confirmada no brief */
-    facebook: "", // TODO
+    instagram: "https://www.instagram.com/rosibelpedras/",
+    facebook: "https://www.facebook.com/Rosibelpedrasemarmores/",
   },
 
   /**
-   * Linha de produtos — preencher SOMENTE com o brief aprovado.
-   * Detalhes em src/content/products.ts
+   * Linha de produtos (brief). Detalhes em src/content/products.ts
    */
-  productLine: [] as string[], // TODO: categorias do brief
+  productLine: [
+    "granitos",
+    "mármores",
+    "quartzitos",
+    "quartzo natural",
+    "superfícies de quartzo",
+    "superfícies ultracompactas",
+    "travertinos",
+    "ardósia",
+    "rock face",
+    "pedras decorativas (naturais e importadas)",
+  ],
 
-  /** Público-alvo — preencher SOMENTE com o brief aprovado */
-  audience: [] as string[], // TODO: audiência do brief
+  /** Público (brief) */
+  audience: [
+    "clientes finais de médio/alto padrão",
+    "arquitetos",
+    "designers de interiores",
+    "construtoras da Grande BH",
+  ],
 
   /**
    * Feature flags para cenas da Home (expandir nas fases seguintes).
