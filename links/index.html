@@ -88,16 +88,13 @@ a{color:inherit;text-decoration:none}
 
 /* brand column */
 .brand-col{display:grid;gap:22px;align-content:center;min-width:0}
-.mark{
-  width:72px;height:72px;
-  display:grid;place-items:center;
-  border:1px solid rgba(189,167,125,.55);
-  background:
-    linear-gradient(145deg, rgba(189,167,125,.18), transparent 55%),
-    rgba(30,38,69,.55);
-  font-family:var(--display);font-weight:900;font-size:1.65rem;
-  letter-spacing:.04em;color:var(--quartz);
-  clip-path:polygon(8% 0,100% 0,100% 92%,92% 100%,0 100%,0 8%);
+.logo{
+  width:clamp(96px,18vw,128px);height:clamp(96px,18vw,128px);
+  border-radius:50%;
+  object-fit:cover;
+  border:1.5px solid rgba(189,167,125,.55);
+  background:#fff;
+  box-shadow:0 16px 48px rgba(0,0,0,.35);
 }
 .eyebrow{
   font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;
@@ -279,7 +276,7 @@ a{color:inherit;text-decoration:none}
 
 <main class="shell">
   <section class="brand-col" aria-label="Rosibel Pedras">
-    <div class="mark reveal d1" aria-hidden="true">R</div>
+    <img class="logo reveal d1" src="/links/logo.jpg" width="128" height="128" alt="Logo Rosibel Pedras" loading="eager" decoding="async">
     <p class="eyebrow reveal d2">Contagem · Minas Gerais</p>
     <h1 class="brand reveal d3">Rosibel<em>Pedras</em></h1>
     <p class="lede reveal d4">O lugar onde seus sonhos ganham forma e beleza.</p>
